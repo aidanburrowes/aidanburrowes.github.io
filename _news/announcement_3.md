@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Starting internship at the UF College of Medicine.
+Starting internship at the [UF College of Medicine](https://prismap.medicine.ufl.edu/).

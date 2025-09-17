@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Selected as a [MOVE Fellow](https://joinhandshake.com/move-program) by [Handshake AI](https://joinhandshake.com/expert-ai)!
+Selected as a [MOVE Fellow](https://joinhandshake.com/move-program) by [Handshake AI](https://joinhandshake.com/expert-ai).
