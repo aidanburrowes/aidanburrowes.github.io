@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Accepted as a 2025 [Perplexity Campus Partner](https://www.perplexity.ai/hub/legal/campus-partners-program-terms)!
+Selected as a [2025 Perplexity Campus Partner](https://www.perplexity.ai/hub/legal/campus-partners-program-terms).
