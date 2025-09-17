@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Starting at Roblox as a Campus Ambassador.
+Starting at Roblox as a [Campus Ambassador](https://www.linkedin.com/feed/update/urn:li:activity:7371648293082357760/)!
