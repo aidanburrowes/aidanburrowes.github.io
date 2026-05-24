@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Graduated from the University of Florida with a B.S. in Computer Science & minors in Electrical Engineering & Physics!
+Graduated from the University of Florida with University Honors, obtaining a B.S. in Computer Science & minors in Electrical Engineering & Physics!
