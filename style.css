@@ -212,3 +212,25 @@ h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); margin: 10px 0 22px; }
   .news-thumb { width: 46px; height: 46px; }
   .news .logo { width: 42px; height: 42px; }
 }
+
+/* ── top pills with icons; icon-only on small phones ── */
+.pill { display: inline-flex; align-items: center; gap: 7px; }
+.pill .ico { width: 14px; height: 14px; background: currentColor; }
+.pill.on { background: var(--fg); color: var(--bg); }
+@media (max-width: 520px) { .pill span { display: none; } .pill { padding: 7px 9px; } .pill .ico { width: 16px; height: 16px; } }
+
+/* ── links with icons (hero + contact) ── */
+.hero-links a, .social a { display: inline-flex; align-items: center; gap: 7px; }
+.hero-links .ico, .social .ico { width: 15px; height: 15px; }
+.hero-links a:hover .ico, .social a:hover .ico { background: var(--fg); }
+
+/* ── achievements: details appear on hover / focus (always visible on touch screens) ── */
+@media (hover: hover) {
+  .rows.achv li { position: relative; }
+  .rows.achv li small { position: absolute; z-index: 5; left: 92px; top: calc(100% - 2px); margin: 0; padding: 6px 11px; border-radius: 9px; max-width: min(420px, 90%);
+    background: var(--bg); border: 1px solid var(--fg2); color: var(--fg); font-size: .78rem; line-height: 1.4; box-shadow: 0 10px 28px -14px rgba(0,0,0,.45);
+    opacity: 0; transform: translateY(-4px); pointer-events: none; transition: opacity .18s ease, transform .18s ease; }
+  .rows.achv li small::before { content: none; }
+  .rows.achv li:hover small, .rows.achv li:focus-visible small, .rows.achv li:focus-within small { opacity: 1; transform: none; }
+  .rows.achv li[tabindex]:hover b, .rows.achv li[tabindex]:focus-visible b { text-decoration: underline dotted; text-underline-offset: 4px; text-decoration-color: var(--fg2); }
+}
