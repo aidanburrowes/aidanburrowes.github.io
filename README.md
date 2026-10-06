@@ -68,9 +68,13 @@ Shapes follow `shapes/CONTRACT.md`. To preview one in isolation, open `lab.html?
 
 Skills are ranked by how many repos, roles, and research items each appears in; the most-used ones are highlighted and listed first.
 
-## Deploy (GitHub Pages)
+## Hosting
 
-The repo for a user site must be named `aidanburrowes.github.io`. Push these files to the branch Pages serves (Settings → Pages). `.nojekyll` tells Pages to serve files as-is. A private repo needs a paid plan for Pages.
+This repo **is** the live site: https://aidanburrowes.github.io (GitHub Pages, serving the `main` branch from the repo root; `.nojekyll` tells Pages to serve files as-is). Push to `main` and the site updates in about a minute.
+
+To change something: edit locally, preview with `python3 dev-server.py 4175 .`, then `git add -A && git commit -m "..." && git push`.
+
+The previous al-folio (Jekyll) version of the site is archived, untouched, in [`aidanburrowes/old-website`](https://github.com/aidanburrowes/old-website).
 
 ## Credits
 
