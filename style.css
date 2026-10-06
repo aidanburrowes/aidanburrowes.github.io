@@ -231,6 +231,8 @@ h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); margin: 10px 0 22px; }
     background: var(--bg); border: 1px solid var(--fg2); color: var(--fg); font-size: .78rem; line-height: 1.4; box-shadow: 0 10px 28px -14px rgba(0,0,0,.45);
     opacity: 0; transform: translateY(-4px); pointer-events: none; transition: opacity .18s ease, transform .18s ease; }
   .rows.achv li small::before { content: none; }
+  .rows.achv li:nth-last-child(-n+2) small { top: auto; bottom: calc(100% - 2px); transform: translateY(4px); }
+  .rows.achv li:nth-last-child(-n+2):hover small, .rows.achv li:nth-last-child(-n+2):focus-within small { transform: none; }
   .rows.achv li:hover small, .rows.achv li:focus-visible small, .rows.achv li:focus-within small { opacity: 1; transform: none; }
   .rows.achv li[tabindex]:hover b, .rows.achv li[tabindex]:focus-visible b { text-decoration: underline dotted; text-underline-offset: 4px; text-decoration-color: var(--fg2); }
 }
