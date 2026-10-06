@@ -1,0 +1,10 @@
+[
+  {"date": "2026-08", "text": "Started as a Software Engineer at Bloomberg in New York.", "letters": "B"},
+  {"date": "2026-05", "text": "Graduated from the University of Florida with a B.S. in Computer Science and University Honors.", "letters": "UF"},
+  {"date": "2025-06-20", "text": "Started an internship at the UF College of Medicine.", "letters": "IC3"},
+  {"date": "2025-06-13", "text": "Received the HSF Scholar Award.", "link": "https://www.hsf.net/scholarship", "letters": "HSF"},
+  {"date": "2025-05-20", "text": "Started an internship at Roblox.", "icon": "roblox"},
+  {"date": "2025-03-24", "text": "Paper published in the Journal of Low Power Electronics and Applications: 2D Spintronics for Neuromorphic Computing with Scalability and Energy Efficiency.", "link": "https://www.mdpi.com/2079-9268/15/2/16", "thumb": "assets/thumbs/jlpea-spintronics.jpg"},
+  {"date": "2024-09", "text": "Paper published in Digital Scholarship in the Humanities: sentiment analysis to trace the history of identity and belonging in ancient Greek literature.", "link": "https://doi.org/10.1093/llc/fqae048", "thumb": "assets/thumbs/dsh-greek.jpg"},
+  {"date": "2024-05", "text": "Started an internship at Microsoft in Redmond.", "icon": "microsoft"}
+]

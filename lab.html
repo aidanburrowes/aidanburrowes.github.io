@@ -1,0 +1,45 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>shape lab</title>
+<style>html,body{margin:0;background:#e9e5d3}canvas{display:block}</style>
+<canvas id="c" width="1200" height="1200"></canvas>
+<script type="module">
+/* Shape lab: renders shapes/<shape>.js from 4 yaw angles (2x2 grid) with the site's camera and lights.
+   Query: ?shape=car&t=1.2&pitch=0&zoom=1&views=0,90,180,270   (views = yaw degrees, 1-4 entries)
+   Add &single=1 to render only the first view full-frame (use zoom to inspect details). */
+import * as THREE from './vendor/three.module.min.js';
+const q = new URLSearchParams(location.search);
+const name = q.get('shape') || 'car';
+const t = parseFloat(q.get('t') || '1');
+const zoom = parseFloat(q.get('zoom') || '1');
+const pitch = parseFloat(q.get('pitch') || '0');
+const views = (q.get('views') || '40,130,220,310').split(',').map(Number);
+const single = q.get('single') === '1';
+const mod = await import(`./shapes/${name}.js`);
+const lam = c => new THREE.MeshLambertMaterial({ color: c });
+const built = mod.default(THREE, { lam });
+if (built.update) { for (let i = 0; i < 20; i++) built.update(0.05, t - 1 + i * 0.05); }
+
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(1200, 1200, false);
+renderer.setClearColor(0xe9e5d3, 1);
+const scene = new THREE.Scene();
+scene.add(new THREE.AmbientLight(0xffffff, 1.9));
+const key = new THREE.DirectionalLight(0xffffff, 2.1); key.position.set(4, 9, 5); scene.add(key);
+const fill = new THREE.DirectionalLight(0xffffff, .7); fill.position.set(-6, 3, -4); scene.add(fill);
+const holder = new THREE.Group(); holder.add(built.group); scene.add(holder);
+holder.rotation.x = pitch;
+const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, .1, 100);
+camera.position.set(8, 7.2, 8); camera.lookAt(0, 0, 0);
+const vs = 6.2 / zoom; camera.left = -vs / 2; camera.right = vs / 2; camera.top = vs / 2; camera.bottom = -vs / 2; camera.updateProjectionMatrix();
+renderer.setScissorTest(true);
+const cells = single ? [[0, 0, 1200, views[0]]] : [[0, 600, 600, views[0]], [600, 600, 600, views[1] ?? 130], [0, 0, 600, views[2] ?? 220], [600, 0, 600, views[3] ?? 310]];
+for (const [x, y, s, yaw] of cells) {
+  const size = single ? 1200 : 600;
+  renderer.setViewport(x, y, size, size); renderer.setScissor(x, y, size, size);
+  holder.rotation.y = THREE.MathUtils.degToRad(yaw);
+  renderer.render(scene, camera);
+}
+document.title = 'ready';
+</script>

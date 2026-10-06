@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aidan Burrowes</title>
+  <meta name="description" content="Aidan Burrowes: software engineer at Bloomberg. University of Florida computer science, previously Roblox and Microsoft. AI agents and research.">
+  <meta property="og:title" content="Aidan Burrowes">
+  <meta property="og:description" content="Software engineer at Bloomberg. AI agents and research. Scroll to see the shapes change.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#F3EFDC">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%23F2C94C' stroke-width='9'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loader" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div id="glow" aria-hidden="true"></div>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="css-ring" aria-hidden="true"></div>
+  <div id="cursor" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="name" href="#hello">aidan burrowes</a>
+    <div class="top-r">
+      <a class="pill" href="assets/Aidan_Burrowes_Resume.pdf" target="_blank" rel="noopener">resume</a>
+      <button id="mode" type="button" aria-label="Switch between light and dark mode" aria-pressed="false">
+        <svg class="i-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <span class="knob"></span>
+        <svg class="i-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <nav class="rail" aria-label="Sections">
+    <a href="#hello" data-label="hello"></a>
+    <a href="#about" data-label="about"></a>
+    <a href="#experience" data-label="experience"></a>
+    <a href="#skills" data-label="skills"></a>
+    <a href="#research" data-label="research"></a>
+    <a href="#publications" data-label="publications"></a>
+    <a href="#projects" data-label="projects"></a>
+    <a href="#achievements" data-label="achievements"></a>
+    <a href="#contact" data-label="contact"></a>
+  </nav>
+
+  <main>
+    <!-- 0 · hello -->
+    <section id="hello" class="panel hero">
+      <div class="copy">
+        <p class="mono rv">hi, i'm</p>
+        <h1 class="rv">Aidan Burrowes</h1>
+        <p class="lede rv">software engineer at bloomberg in new york.<br>uf computer science grad, building ai agents and doing research.</p>
+        <p class="hero-links mono rv">
+          <a href="assets/Aidan_Burrowes_Resume.pdf" target="_blank" rel="noopener">resume ↗</a>
+          <a href="https://www.linkedin.com/in/aidanburrowes/" target="_blank" rel="noopener">linkedin ↗</a>
+          <a href="https://github.com/aidanburrowes" target="_blank" rel="noopener">github ↗</a>
+        </p>
+      </div>
+      <a class="cue mono" href="#about" aria-label="Scroll to the next section">scroll</a>
+    </section>
+
+<!-- 1 · about -->
+    <section id="about" class="panel">
+      <div class="copy">
+        <p class="mono rv">01 · about</p>
+        <h2 class="rv">a little about me</h2>
+        <p class="rv">I'm a software engineer at Bloomberg in New York. I graduated from the University of Florida in 2026 with a B.S. in computer science, University Honors, and minors in electrical engineering and physics.</p>
+        <p class="rv">I build full-stack systems and AI agents, and I did research on language models and spintronics along the way.</p>
+        <p class="rv keepup"><a href="news.html">keep up with what's going on with me →</a></p>
+        <figure class="photo rv">
+          <img src="assets/portrait.jpg" alt="Portrait of Aidan Burrowes, smiling" width="600" height="600" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+<!-- 2 · experience -->
+    <section id="experience" class="panel">
+      <div class="copy">
+        <p class="mono rv">02 · experience</p>
+        <h2 class="rv">where i've worked</h2>
+        <ul class="rows biz">
+          <li class="rv">
+            <span class="logo bloomberg">B</span>
+            <div><b>Bloomberg</b><span class="meta mono">software engineer · new york · 2026 –</span><small>Started my career here right after graduating from UF.</small></div>
+          </li>
+          <li class="rv">
+            <span class="logo"><i class="ico" style="--i:url(assets/icons/roblox.svg);--c:#E2231A"></i></span>
+            <div><b>Roblox</b><span class="meta mono">software engineer intern · san mateo · 2025</span><small>Built CI break detection that saves 15 hours a week and $50k a year.</small></div>
+          </li>
+          <li class="rv">
+            <span class="logo"><svg viewBox="0 0 23 23" aria-hidden="true"><path fill="#F25022" d="M1 1h10v10H1z"/><path fill="#7FBA00" d="M12 1h10v10H12z"/><path fill="#00A4EF" d="M1 12h10v10H1z"/><path fill="#FFB900" d="M12 12h10v10H12z"/></svg></span>
+            <div><b>Microsoft</b><span class="meta mono">software engineering intern · redmond · 2024</span><small>Fine-tuned speech-to-text models, lifting entity transcription accuracy 50% in Teams meetings for 1M+ users.</small></div>
+          </li>
+          <li class="rv">
+            <span class="logo mono-logo">H</span>
+            <div><b>HumanAI</b><span class="meta mono">software engineer intern · singapore · 2023</span><small>Built a Flutter app to control a robotic chef and cut dispensing latency from 15s to 5s.</small></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+<!-- 7 · skills -->
+    <section id="skills" class="panel">
+      <div class="copy xwide">
+        <p class="mono rv">03 · skills</p>
+        <h2 class="rv">what i build with</h2>
+        <p class="sub rv"><span class="legend"></span> highlighted = what i use the most</p>
+        <p class="mono grp rv">languages</p>
+        <ul class="tiles rv">
+          <li class="hot" style="--c:#3776AB"><i class="ico" style="--i:url(assets/icons/python.svg);--c:#3776AB"></i><span>Python</span></li>
+          <li class="hot" style="--c:#00ADD8"><i class="ico" style="--i:url(assets/icons/go.svg);--c:#00ADD8"></i><span>Go</span></li>
+          <li class="hot" style="--c:#00599C"><i class="ico" style="--i:url(assets/icons/cplusplus.svg);--c:#00599C"></i><span>C++</span></li>
+          <li class="hot" style="--c:#ED8B00"><i class="ico" style="--i:url(assets/icons/java.svg);--c:#ED8B00"></i><span>Java</span></li>
+          <li class="hot" style="--c:#3178C6"><i class="ico" style="--i:url(assets/icons/typescript.svg);--c:#3178C6"></i><span>TypeScript</span></li>
+          <li style="--c:#D4B900"><i class="ico" style="--i:url(assets/icons/javascript.svg);--c:#D4B900"></i><span>JavaScript</span></li>
+          <li style="--c:#0175C2"><i class="ico" style="--i:url(assets/icons/dart.svg);--c:#0175C2"></i><span>Dart</span></li>
+          <li style="--c:#336791"><i class="ico" style="--i:url(assets/icons/sql.svg);--c:#336791"></i><span>SQL</span></li>
+          <li style="--c:#F05138"><i class="ico" style="--i:url(assets/icons/swift.svg);--c:#F05138"></i><span>Swift</span></li>
+          <li style="--c:#A8B9CC"><i class="ico" style="--i:url(assets/icons/c.svg);--c:#A8B9CC"></i><span>C</span></li>
+          <li style="--c:#E34F26"><i class="ico" style="--i:url(assets/icons/html5.svg);--c:#E34F26"></i><span>HTML/CSS</span></li>
+          <li style="--c:#ED6B2D"><i class="ico" style="--i:url(assets/icons/matlab.svg);--c:#ED6B2D"></i><span>MATLAB</span></li>
+          <li style="--c:#888"><i class="ico mono-ico" style="--c:#888">ASM</i><span>Assembly</span></li>
+        </ul>
+        <p class="mono grp rv">frameworks and libraries</p>
+        <ul class="tiles rv">
+          <li class="hot" style="--c:#1BA0C4"><i class="ico" style="--i:url(assets/icons/react.svg);--c:#1BA0C4"></i><span>React</span></li>
+          <li class="hot" style="--c:#009688"><i class="ico" style="--i:url(assets/icons/fastapi.svg);--c:#009688"></i><span>FastAPI</span></li>
+          <li class="hot" style="--c:#02569B"><i class="ico" style="--i:url(assets/icons/flutter.svg);--c:#02569B"></i><span>Flutter</span></li>
+          <li class="hot" style="--c:#5FA04E"><i class="ico" style="--i:url(assets/icons/nodedotjs.svg);--c:#5FA04E"></i><span>Node.js</span></li>
+          <li class="hot" style="--c:#EE4C2C"><i class="ico" style="--i:url(assets/icons/pytorch.svg);--c:#EE4C2C"></i><span>PyTorch</span></li>
+          <li class="hot" style="--c:#888"><i class="ico" style="--i:url(assets/icons/flask.svg);--c:#888"></i><span>Flask</span></li>
+          <li class="hot" style="--c:#C99A00"><i class="ico" style="--i:url(assets/icons/mcp.svg);--c:#C99A00"></i><span>MCP</span></li>
+          <li style="--c:#888"><i class="ico" style="--i:url(assets/icons/express.svg);--c:#888"></i><span>Express</span></li>
+          <li style="--c:#888"><i class="ico" style="--i:url(assets/icons/nextdotjs.svg);--c:#888"></i><span>Next.js</span></li>
+          <li style="--c:#FF6F00"><i class="ico" style="--i:url(assets/icons/tensorflow.svg);--c:#FF6F00"></i><span>TensorFlow</span></li>
+          <li style="--c:#C99A00"><i class="ico" style="--i:url(assets/icons/rag.svg);--c:#C99A00"></i><span>RAG</span></li>
+          <li style="--c:#F05138"><i class="ico" style="--i:url(assets/icons/swift.svg);--c:#F05138"></i><span>SwiftUI</span></li>
+          <li style="--c:#76B900"><i class="ico" style="--i:url(assets/icons/nvidia.svg);--c:#76B900"></i><span>Isaac Sim</span></li>
+          <li style="--c:#F24E1E"><i class="ico" style="--i:url(assets/icons/figma.svg);--c:#F24E1E"></i><span>Figma</span></li>
+          <li style="--c:#646CFF"><i class="ico" style="--i:url(assets/icons/vite.svg);--c:#646CFF"></i><span>Vite</span></li>
+          <li style="--c:#F7931E"><i class="ico" style="--i:url(assets/icons/scikitlearn.svg);--c:#F7931E"></i><span>sklearn</span></li>
+          <li style="--c:#4D77CF"><i class="ico" style="--i:url(assets/icons/numpy.svg);--c:#4D77CF"></i><span>NumPy</span></li>
+          <li style="--c:#007808"><i class="ico" style="--i:url(assets/icons/ffmpeg.svg);--c:#007808"></i><span>FFmpeg</span></li>
+          <li style="--c:#1C8F7B"><i class="ico" style="--i:url(assets/icons/langchain.svg);--c:#1C8F7B"></i><span>LangChain</span></li>
+          <li style="--c:#E10098"><i class="ico" style="--i:url(assets/icons/graphql.svg);--c:#E10098"></i><span>GraphQL</span></li>
+          <li style="--c:#244C5A"><i class="ico mono-ico" style="--c:#244C5A">gRPC</i><span>gRPC</span></li>
+          <li style="--c:#8DD6F9"><i class="ico" style="--i:url(assets/icons/webpack.svg);--c:#8DD6F9"></i><span>Webpack</span></li>
+          <li style="--c:#6929C4"><i class="ico" style="--i:url(assets/icons/qiskit.svg);--c:#6929C4"></i><span>Qiskit</span></li>
+          <li style="--c:#888"><i class="ico" style="--i:url(assets/icons/unity.svg);--c:#888"></i><span>Unity</span></li>
+          <li style="--c:#3DDC84"><i class="ico" style="--i:url(assets/icons/androidstudio.svg);--c:#3DDC84"></i><span>Android Studio</span></li>
+          <li style="--c:#FF6600"><i class="ico" style="--i:url(assets/icons/rabbitmq.svg);--c:#FF6600"></i><span>RabbitMQ</span></li>
+        </ul>
+        <p class="mono grp rv">infrastructure and data</p>
+        <ul class="tiles rv">
+          <li class="hot" style="--c:#2496ED"><i class="ico" style="--i:url(assets/icons/docker.svg);--c:#2496ED"></i><span>Docker</span></li>
+          <li class="hot" style="--c:#326CE5"><i class="ico" style="--i:url(assets/icons/kubernetes.svg);--c:#326CE5"></i><span>Kubernetes</span></li>
+          <li class="hot" style="--c:#FF9900"><i class="ico" style="--i:url(assets/icons/aws.svg);--c:#FF9900"></i><span>AWS</span></li>
+          <li class="hot" style="--c:#888"><i class="ico" style="--i:url(assets/icons/apachekafka.svg);--c:#888"></i><span>Kafka</span></li>
+          <li class="hot" style="--c:#4169E1"><i class="ico" style="--i:url(assets/icons/postgresql.svg);--c:#4169E1"></i><span>PostgreSQL</span></li>
+          <li class="hot" style="--c:#47A248"><i class="ico" style="--i:url(assets/icons/mongodb.svg);--c:#47A248"></i><span>MongoDB</span></li>
+          <li class="hot" style="--c:#DC382D"><i class="ico" style="--i:url(assets/icons/redis.svg);--c:#DC382D"></i><span>Redis</span></li>
+          <li class="hot" style="--c:#C99A00"><i class="ico" style="--i:url(assets/icons/linux.svg);--c:#C99A00"></i><span>Linux</span></li>
+          <li class="hot" style="--c:#07C3F2"><i class="ico" style="--i:url(assets/icons/teamcity.svg);--c:#07C3F2"></i><span>TeamCity</span></li>
+          <li style="--c:#888"><i class="ico" style="--i:url(assets/icons/vercel.svg);--c:#888"></i><span>Vercel</span></li>
+          <li style="--c:#00CA8E"><i class="ico" style="--i:url(assets/icons/nomad.svg);--c:#00CA8E"></i><span>Nomad</span></li>
+          <li style="--c:#888"><i class="ico" style="--i:url(assets/icons/hashicorp.svg);--c:#888"></i><span>HashiStack</span></li>
+          <li style="--c:#E8478B"><i class="ico" style="--i:url(assets/icons/kibana.svg);--c:#E8478B"></i><span>Kibana</span></li>
+          <li style="--c:#6933FF"><i class="ico" style="--i:url(assets/icons/cockroachlabs.svg);--c:#6933FF"></i><span>CockroachDB</span></li>
+          <li style="--c:#4285F4"><i class="ico" style="--i:url(assets/icons/googlecloud.svg);--c:#4285F4"></i><span>GCP</span></li>
+          <li style="--c:#0078D4"><i class="ico" style="--i:url(assets/icons/azure.svg);--c:#0078D4"></i><span>Azure</span></li>
+          <li style="--c:#F46800"><i class="ico" style="--i:url(assets/icons/grafana.svg);--c:#F46800"></i><span>Grafana</span></li>
+          <li style="--c:#E25A1C"><i class="ico" style="--i:url(assets/icons/apachespark.svg);--c:#E25A1C"></i><span>Spark</span></li>
+          <li style="--c:#D24939"><i class="ico" style="--i:url(assets/icons/jenkins.svg);--c:#D24939"></i><span>Jenkins</span></li>
+          <li style="--c:#2088FF"><i class="ico" style="--i:url(assets/icons/githubactions.svg);--c:#2088FF"></i><span>GitHub Actions</span></li>
+          <li style="--c:#F05032"><i class="ico" style="--i:url(assets/icons/git.svg);--c:#F05032"></i><span>Git</span></li>
+          <li style="--c:#888"><i class="ico" style="--i:url(assets/icons/apple.svg);--c:#888"></i><span>macOS</span></li>
+          <li style="--c:#A22846"><i class="ico" style="--i:url(assets/icons/raspberrypi.svg);--c:#A22846"></i><span>Raspberry Pi</span></li>
+        </ul>
+        <p class="mono grp rv">ai tools</p>
+        <ul class="tiles rv">
+          <li class="hot" style="--c:#D97757"><i class="ico" style="--i:url(assets/icons/claude.svg);--c:#D97757"></i><span>Claude Code</span></li>
+          <li style="--c:#888"><i class="ico" style="--i:url(assets/icons/cursor.svg);--c:#888"></i><span>Cursor</span></li>
+          <li style="--c:#10A37F"><i class="ico" style="--i:url(assets/icons/openai.svg);--c:#10A37F"></i><span>Codex</span></li>
+          <li style="--c:#C99A00"><i class="ico mono-ico" style="--c:#C99A00">claw</i><span>OpenClaw</span></li>
+        </ul>
+      </div>
+    </section>
+
+<!-- 3 · research -->
+    <section id="research" class="panel">
+      <div class="copy">
+        <p class="mono rv">04 · research</p>
+        <h2 class="rv">things i've studied</h2>
+        <ul class="rows biz">
+          <li class="rv">
+            <span class="logo"><i class="ico" style="--i:url(assets/icons/qiskit.svg);--c:#6929C4"></i></span>
+            <div><b>Quantum Electronics and Spintronics</b><span class="meta mono">undergraduate research assistant · 2024 –</span><small>Skyrmion qubits through Qiskit simulation and device work, with a published review.</small></div>
+          </li>
+          <li class="rv">
+            <span class="logo mono-logo">DH</span>
+            <div><b>Data-Driven Humanities</b><span class="meta mono">undergraduate research assistant · 2023 – 2026</span><small>Fine-tuned LLMs on Latin syntax with up to 98% accuracy, across 10M+ tokens.</small></div>
+          </li>
+          <li class="rv">
+            <span class="logo mono-logo">IC3</span>
+            <div><b>Intelligent Clinical Care Center</b><span class="meta mono">machine learning engineer intern · 2025</span><small>Built agent infrastructure with MCP and RAG that automated 13 workflows, saving $15k a year.</small></div>
+          </li>
+          <li class="rv">
+            <span class="logo"><i class="ico" style="--i:url(assets/icons/pytorch.svg);--c:#EE4C2C"></i></span>
+            <div><b>Gator Glaciology</b><span class="meta mono">undergraduate research assistant · 2023 – 2024</span><small>Sped up Antarctic bed-topography interpolation 4× with PyTorch on GPUs.</small></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+<!-- 4 · publications -->
+    <section id="publications" class="panel">
+      <div class="copy">
+        <p class="mono rv">05 · publications</p>
+        <h2 class="rv">things i've published</h2>
+        <ul class="rows pubs" id="pubs-list" aria-live="polite"></ul>
+      </div>
+    </section>
+
+<!-- 6 · projects -->
+    <section id="projects" class="panel">
+      <div class="copy wide">
+        <p class="mono rv">06 · projects</p>
+        <h2 class="rv">things i've made</h2>
+        <ul class="rows links" id="projects-list">
+          <li class="rv" data-i="0"><div class="static"><div><b>Game Engine</b><small>Java engine with 2D and 3D roguelike demos.</small></div><span class="tech"><span class="yr mono">2026</span><i class="ico sm" title="Java" style="--i:url(assets/icons/java.svg);--c:#ED8B00"></i></span></div></li>
+          <li class="rv" data-i="1"><div class="static"><div><b>Schedule Assistant</b><small>Degree audit in, conflict-free schedules out.</small></div><span class="tech"><span class="yr mono">2026</span><i class="ico sm" title="Python" style="--i:url(assets/icons/python.svg);--c:#3776AB"></i><i class="ico sm" title="React" style="--i:url(assets/icons/react.svg);--c:#1BA0C4"></i></span></div></li>
+          <li class="rv" data-i="2"><a href="https://github.com/aidanburrowes/Talk2Doc" target="_blank" rel="noopener"><div><b>Talk2Doc</b><small>Microservice voice assistant for medical use.</small></div><span class="tech"><span class="yr mono">2026</span><i class="ico sm" title="Python" style="--i:url(assets/icons/python.svg);--c:#3776AB"></i><i class="ico sm" title="Docker" style="--i:url(assets/icons/docker.svg);--c:#2496ED"></i></span></a></li>
+          <li class="rv" data-i="3"><a href="https://github.com/aidanburrowes/Melody-Mimicry" target="_blank" rel="noopener"><div><b>Melody Mimicry</b><small>AI voice conversion for songs.</small></div><span class="tech"><span class="yr mono">2023 – 2025</span><i class="ico sm" title="Python" style="--i:url(assets/icons/python.svg);--c:#3776AB"></i></span></a></li>
+          <li class="rv" data-i="4"><div class="static"><div><b>USAF autonomous agents</b><small>AI-driven mission planning architecture for the Air Force at Eglin.</small></div><span class="tech"><span class="yr mono">2024</span><i class="ico sm" title="US Air Force" style="--i:url(assets/icons/usaf.svg);--c:#4a6fa5"></i></span></div></li>
+          <li class="rv" data-i="5"><a href="https://github.com/aidanburrowes/dAIet" target="_blank" rel="noopener"><div><b>dAIet</b><small>AI nutrition and exercise app.</small></div><span class="tech"><span class="yr mono">2024</span><i class="ico sm" title="Dart" style="--i:url(assets/icons/dart.svg);--c:#0175C2"></i></span></a></li>
+        </ul>
+        <p class="more rv"><a href="https://github.com/aidanburrowes?tab=repositories" target="_blank" rel="noopener">all repositories ↗</a></p>
+      </div>
+    </section>
+
+<!-- 5 · achievements -->
+    <section id="achievements" class="panel">
+      <div class="copy">
+        <p class="mono rv">07 · achievements</p>
+        <h2 class="rv">things i've earned</h2>
+        <p class="mono grp rv">recognition</p>
+        <ul class="rows pubs achv">
+          <li class="rv"><span class="mono">2026</span><div><b>Graduated with University Honors</b></div></li>
+          <li class="rv"><span class="mono">2026</span><div><b>AI Medallion</b><small>one of 20 recipients</small></div></li>
+          <li class="rv"><span class="mono">2026</span><div><b>Order of the Engineer</b><small>designee</small></div></li>
+          <li class="rv"><span class="mono">2022</span><div><b>National Merit Finalist</b><small>plus national recognition awards</small></div></li>
+        </ul>
+        <p class="mono grp rv">scholarships</p>
+        <ul class="rows pubs achv">
+          <li class="rv"><span class="mono">2025</span><div><b>Purdue Science B4PhD Scholar</b></div></li>
+          <li class="rv"><span class="mono">2023 – 2025</span><div><b>HSF Scholar</b><small>three years running</small></div></li>
+          <li class="rv"><span class="mono">2023</span><div><b>UF AI Scholar</b><small>one of 35, with $1,750 in research funding</small></div></li>
+        </ul>
+        <p class="mono grp rv">programs and competitions</p>
+        <ul class="rows pubs achv">
+          <li class="rv"><span class="mono">2025 – 2026</span><div><b>Roblox Campus Ambassador</b></div></li>
+          <li class="rv"><span class="mono">2025</span><div><b>Perplexity Campus Partner</b></div></li>
+          <li class="rv"><span class="mono">2023</span><div><b>USF Hackathon winner</b></div></li>
+        </ul>
+        <p class="mono grp rv">leadership</p>
+        <ul class="rows pubs achv">
+          <li class="rv"><span class="mono">2025 – 2026</span><div><b>VP, Florida Quantum Computing Society</b></div></li>
+          <li class="rv"><span class="mono">2023 – 2026</span><div><b>ColorStack mentor and project member</b></div></li>
+          <li class="rv"><span class="mono"></span><div><b>NSBE mentor and national member</b></div></li>
+          <li class="rv"><span class="mono"></span><div><b>SHPE national member</b></div></li>
+        </ul>
+      </div>
+    </section>
+
+<!-- 8 · contact -->
+    <section id="contact" class="panel">
+      <div class="copy">
+        <p class="mono rv">08 · contact</p>
+        <h2 class="rv">say hi.</h2>
+        <p class="rv">Always up for research collaborations, interesting problems, and long conversations about eeveelutions.</p>
+        <a class="mail rv" href="mailto:aidan.burrowes@gmail.com">aidan.burrowes@gmail.com</a>
+        <p class="social mono rv"><a href="news.html">news →</a><a href="assets/Aidan_Burrowes_Resume.pdf" target="_blank" rel="noopener">resume ↗</a><a href="https://www.linkedin.com/in/aidanburrowes/" target="_blank" rel="noopener">linkedin ↗</a><a href="https://github.com/aidanburrowes" target="_blank" rel="noopener">github ↗</a></p>
+      </div>
+      <p class="legal mono">fan-made. pokémon, rocket league, fullmetal alchemist, and survivor belong to their owners. company logos are trademarks of their owners. no official art used.</p>
+    </section>
+  </main>
+
+  <script>
+    /* failsafe: never leave a visitor on the loading dots, even if WebGL or a module fails */
+    setTimeout(function () { var l = document.getElementById('loader'); if (l) l.classList.add('done'); }, 5000);
+  </script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
