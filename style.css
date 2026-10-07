@@ -236,3 +236,35 @@ h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); margin: 10px 0 22px; }
   .rows.achv li:hover small, .rows.achv li:focus-visible small, .rows.achv li:focus-within small { opacity: 1; transform: none; }
   .rows.achv li[tabindex]:hover b, .rows.achv li[tabindex]:focus-visible b { text-decoration: underline dotted; text-underline-offset: 4px; text-decoration-color: var(--fg2); }
 }
+
+/* ── phones & touch screens ── */
+@media (max-width: 820px) {
+  .cue { display: none; }
+  h1, h2, .lede { text-wrap: balance; }
+  .copy p:not(.mono) { text-wrap: pretty; }
+  .mono { font-size: .76rem; }
+  .tiles span { font-size: .66rem; }
+  .legal { font-size: .72rem; line-height: 1.5; }
+  .name { padding: 10px 0; }
+  .pill { min-height: 38px; }
+  #mode { height: 36px; }
+  .hero-links a, .social a, .more a, .keepup a { padding-top: 10px; padding-bottom: 10px; }
+  /* project rows: year and icons sit under the description instead of squeezing the title */
+  .links a, .links .static { grid-template-columns: 1fr; gap: 8px; padding-top: 16px; padding-bottom: 14px; }
+  .links .tech { justify-content: flex-start; }
+  .social { flex-wrap: wrap; gap: 0 22px; }
+  .social a { white-space: nowrap; }
+  .hero-links { flex-wrap: wrap; gap: 0 18px; }
+  /* publications: the thumbnail drops under the text instead of squeezing the title */
+  .pubs li.has-thumb { grid-template-columns: 78px 1fr; }
+  .pubs li.has-thumb .pub-thumb { grid-column: 2; width: 100%; max-width: 230px; height: auto; aspect-ratio: 3 / 2; margin-top: 8px; justify-self: start; }
+}
+@media (hover: none) {
+  /* achievements: details stay folded away until you tap a row */
+  .rows.achv li { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .rows.achv li small { display: none; }
+  .rows.achv li small::before { content: none; }
+  .rows.achv li.open small { display: block; margin: 6px 0 2px; font-size: .88rem; line-height: 1.5; color: var(--fg2); }
+  .rows.achv li b::after { content: "  +"; color: var(--fg2); font-weight: 400; }
+  .rows.achv li.open b::after { content: "  \2212"; }
+}

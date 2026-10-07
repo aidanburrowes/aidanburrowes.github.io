@@ -85,10 +85,17 @@ const computeSel = () => {
   const y = scrollY + innerHeight / 2;
   if (y <= centers[0]) return 0;
   for (let i = 0; i < N - 1; i++) {
-    if (y < centers[i + 1]) return i + smooth(((y - centers[i]) / (centers[i + 1] - centers[i]) - .25) / .5);
+    if (y < centers[i + 1]) { const m = isMobile(); return i + smooth(((y - centers[i]) / (centers[i + 1] - centers[i]) - (m ? .72 : .25)) / (m ? .28 : .5)); }
   }
   return N - 1;
 };
+
+/* achievements: on touch screens a row opens its details when tapped (on desktop they show on hover) */
+$$('.achv li').forEach(li => {
+  const toggle = () => { if (matchMedia('(hover: none)').matches) li.classList.toggle('open'); };
+  li.addEventListener('click', toggle);
+  li.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+});
 
 /* reveal-on-scroll, staggered */
 panels.forEach(p => $$('.rv', p).forEach((el, i) => el.style.setProperty('--d', i)));
