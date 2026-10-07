@@ -45,20 +45,25 @@ applyMode();
 /* ── publications: rendered from data/publications.json (edit that file to add more) ── */
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; };
 async function renderPubs() {
-  const list = $('#pubs-list'); if (!list) return;
+  const host = $('#pubs-list'); if (!host) return;
   let items = [];
   try { items = await (await fetch('data/publications.json')).json(); } catch { return; }
-  for (const p of items) {
-    const li = el('li', 'rv' + (p.thumb ? ' has-thumb' : ''));
-    li.append(el('span', 'mono', p.year));
-    const body = p.link ? el('a') : el('div');
-    if (p.link) { body.href = p.link; body.target = '_blank'; body.rel = 'noopener'; }
-    body.append(el('b', '', p.title));
-    const detail = [p.role, p.venue].filter(Boolean).join(' · ') + (p.link ? ' ↗' : '');
-    if (detail) body.append(el('small', '', detail));
-    li.append(body);
-    if (p.thumb) { const img = el('img', 'pub-thumb'); img.src = p.thumb; img.alt = ''; img.loading = 'lazy'; li.append(img); }
-    list.append(li);
+  const groups = [...new Set(items.map(p => p.group || 'published'))];   // groups appear in the order they're first used
+  for (const g of groups) {
+    host.append(el('p', 'mono grp rv', g));
+    const ul = el('ul', 'rows pubs' + (g === 'presented' ? ' presented' : '')); host.append(ul);
+    for (const p of items.filter(p => (p.group || 'published') === g)) {
+      const li = el('li', 'rv' + (p.thumb ? ' has-thumb' : ''));
+      li.append(el('span', 'mono', p.year));
+      const body = p.link ? el('a') : el('div');
+      if (p.link) { body.href = p.link; body.target = '_blank'; body.rel = 'noopener'; }
+      body.append(el('b', '', p.title));
+      const detail = [p.role, p.venue].filter(Boolean).join(' · ') + (p.link ? ' ↗' : '');
+      if (detail) body.append(el('small', '', detail));
+      li.append(body);
+      if (p.thumb) { const img = el('img', 'pub-thumb'); img.src = p.thumb; img.alt = ''; img.loading = 'lazy'; li.append(img); }
+      ul.append(li);
+    }
   }
 }
 await renderPubs();

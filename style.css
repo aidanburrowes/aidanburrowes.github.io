@@ -268,3 +268,19 @@ h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); margin: 10px 0 22px; }
   .rows.achv li b::after { content: "  +"; color: var(--fg2); font-weight: 400; }
   .rows.achv li.open b::after { content: "  \2212"; }
 }
+
+/* publications: two labeled halves; the "presented" rows are compact */
+#publications .grp { margin: 14px 0 4px !important; }
+#publications .grp:first-child { margin-top: 6px !important; }
+.pubs.presented li { padding: 10px 0; }
+.pubs.presented b { font-size: 1rem; }
+#publications h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); margin: 6px 0 8px; }
+#publications .pubs:not(.presented) li { padding-top: 11px; padding-bottom: 11px; }
+#publications .pubs li.has-thumb { gap: 12px; }
+.pubs.presented li { padding: 8px 0; align-items: baseline; }
+.pubs.presented li > .mono { padding-top: 0; }
+.pubs.presented small { display: inline; margin: 0 0 0 8px; font-size: .85rem; }
+.pubs.presented small::before { content: "· "; }
+.pubs.presented b { display: inline; }
+#publications .pubs:not(.presented) li { padding-top: 8px; padding-bottom: 8px; }
+#publications .grp { margin: 10px 0 3px !important; }

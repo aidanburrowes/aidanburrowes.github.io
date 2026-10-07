@@ -43,10 +43,10 @@ Or edit `data/news.json` by hand. Each item:
 Add an object to `data/publications.json`:
 
 ```json
-{ "year": "2026", "title": "Paper title", "role": "Coauthor", "venue": "Journal name", "link": "https://doi.org/…", "thumb": "assets/thumbs/paper.jpg" }
+{ "group": "published", "year": "2026", "title": "Paper title", "role": "Coauthor", "venue": "Journal name", "link": "https://doi.org/…", "thumb": "assets/thumbs/paper.jpg" }
 ```
 
-`thumb` and `link` are optional. Put thumbnails in `assets/thumbs/` (about 640px wide is plenty).
+`group` is `published` (papers, peer review) or `presented` (talks and posters); the section shows each group under its own label, in the order they first appear. `thumb` and `link` are optional. Put thumbnails in `assets/thumbs/` (about 640px wide is plenty).
 
 ## How the 3D works
 

@@ -1,9 +1,9 @@
 [
-  {"year": "2025", "title": "2D spintronics for neuromorphic computing with scalability and energy efficiency", "role": "Coauthor", "venue": "Journal of Low Power Electronics and Applications", "link": "https://doi.org/10.3390/jlpea15020016", "thumb": "assets/thumbs/jlpea-spintronics.jpg"},
-  {"year": "2025", "title": "DSH 2025", "role": "Presenter", "venue": "Conference presentation"},
-  {"year": "2025", "title": "Florida Quantum Summit", "role": "Presenter", "venue": "Conference presentation"},
-  {"year": "2024", "title": "Sentiment analysis to trace identity and belonging in ancient Greek literature", "role": "Coauthor", "venue": "Digital Scholarship in the Humanities", "link": "https://doi.org/10.1093/llc/fqae048", "thumb": "assets/thumbs/dsh-greek.jpg"},
-  {"year": "2024", "title": "Syntactic analysis of ancient Latin literature using AI", "role": "Author", "venue": "UF Journal of Undergraduate Research", "link": "https://drive.google.com/file/d/1Cm8QMAUDmLDhJZhFaThcXPrIPaP_Y5nB/view"},
-  {"year": "2024", "title": "UF Spring Undergraduate Symposium", "role": "Presenter", "venue": "Research presentation"},
-  {"year": "2025 – 2026", "title": "Peer reviewer", "venue": "Oxford University Press · Digital Scholarship in the Humanities"}
+  {"year": "2025", "title": "2D spintronics for neuromorphic computing with scalability and energy efficiency", "role": "Coauthor", "venue": "Journal of Low Power Electronics and Applications", "link": "https://doi.org/10.3390/jlpea15020016", "thumb": "assets/thumbs/jlpea-spintronics.jpg", "group": "published"},
+  {"year": "2024", "title": "Sentiment analysis to trace identity and belonging in ancient Greek literature", "role": "Coauthor", "venue": "Digital Scholarship in the Humanities", "link": "https://doi.org/10.1093/llc/fqae048", "thumb": "assets/thumbs/dsh-greek.jpg", "group": "published"},
+  {"year": "2024", "title": "Syntactic analysis of ancient Latin literature using AI", "role": "Author", "venue": "UF Journal of Undergraduate Research", "link": "https://drive.google.com/file/d/1Cm8QMAUDmLDhJZhFaThcXPrIPaP_Y5nB/view", "group": "published"},
+  {"year": "2025 – 2026", "title": "Peer reviewer", "venue": "Oxford University Press · Digital Scholarship in the Humanities", "group": "published"},
+  {"year": "2025", "title": "DSH 2025", "role": "Presenter", "group": "presented"},
+  {"year": "2025", "title": "Florida Quantum Summit", "role": "Presenter", "group": "presented"},
+  {"year": "2024", "title": "UF Spring Undergraduate Symposium", "role": "Presenter", "group": "presented"}
 ]
