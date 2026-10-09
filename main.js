@@ -73,7 +73,8 @@ const panels = $$('.panel');
 const rail = $$('.rail a');
 const N = panels.length;
 let centers = [];
-const isMobile = () => innerWidth < 820;
+const STACK_MQ = matchMedia('(max-width: 820px), (max-aspect-ratio: 10/11)');
+const isMobile = () => STACK_MQ.matches;   // phones, and any portrait-shaped window (tablets)
 /* Desktop: a section is "active" when its middle crosses the screen's middle.
    Mobile: text cards slide over the object, so a section is active when its top reaches the screen top. */
 /* The hero shape gets whatever room is left above the title: centered there and scaled to fit (short windows!) */
@@ -86,6 +87,24 @@ const measureHero = () => {
   heroFit.s = clamp((to - from) / (innerHeight * .56), .42, 1);
 };
 const measure = () => { measureHero(); centers = panels.map(p => { const r = p.getBoundingClientRect(); return r.top + scrollY + (isMobile() ? innerHeight : r.height) / 2; }); };
+/* Text scales with the window: on the side-by-side layout each section's text block is zoomed so it fits the window's height
+   (never under the top bar), grows a little on big monitors, and never grows into the 3D shape on the right.
+   In the stacked (phone/tablet) layout it stays at its natural size. */
+const FIT_MIN = .82, FIT_MAX = 1.3;   // below ~.82 the small labels get hard to read, so very short windows scroll instead
+const fitCopy = () => {
+  const stacked = isMobile();
+  $$('.panel:not(.hero) .copy').forEach(c => {
+    c.style.zoom = 1;
+    if (stacked) return;
+    const h = c.offsetHeight, w = c.offsetWidth;
+    const padL = parseFloat(getComputedStyle(c.closest('.panel')).paddingLeft) || 0;
+    const byHeight = (innerHeight - 120) / h;                       // leave room for the top bar and breathing space
+    const byWidth = (innerWidth * .56 - padL) / w;                  // stay left of the shape
+    c.style.zoom = clamp(Math.min(byHeight, byWidth), FIT_MIN, FIT_MAX).toFixed(3);
+  });
+};
+fitCopy();
+document.fonts?.ready.then(() => { fitCopy(); measure(); });
 const computeSel = () => {
   const y = scrollY + innerHeight / 2;
   if (y <= centers[0]) return 0;
@@ -113,7 +132,7 @@ try { renderer = new THREE.WebGLRenderer({ canvas: $('#scene'), antialias: true,
 if (!renderer) document.body.classList.add('no-3d');
 
 const scene = new THREE.Scene();
-const VS = () => (innerWidth < 820 ? 10 : 7.4);
+const VS = () => (isMobile() ? 10 : 7.4);
 const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, .1, 100);
 camera.position.set(8, 7.2, 8);
 camera.lookAt(0, 0, 0);
@@ -201,10 +220,10 @@ const resize = () => {
   const vs = VS(), a = W / H;
   camera.left = -vs * a / 2; camera.right = vs * a / 2; camera.top = vs / 2; camera.bottom = -vs / 2;
   camera.updateProjectionMatrix();
-  measure();
+  fitCopy(); measure();
 };
 addEventListener('resize', resize);
-addEventListener('load', measure);
+addEventListener('load', () => { fitCopy(); measure(); });
 resize();
 
 /* pointer, hover, click */
